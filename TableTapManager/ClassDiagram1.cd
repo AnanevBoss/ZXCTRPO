@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TableTapManager.Add" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Add.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TableTapManager.App">
+    <Position X="13" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.CSV" BaseTypeListCollapsed="true">
+    <Position X="11" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSV.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TableTapManager.DataBaseClass">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="TableTapManager.DataBaseClass.act" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>DataBaseClass.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAABAAAAAAQAAAAAACAAQAAAAAE=</HashCode>
+      <FileName>DataBaseClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Editing" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAAAAgAAAAEAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Editing.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TableTapManager.InfoBok" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAgAACAAAAgAEAAAAAAAAAAAAIAAAAkAA=</HashCode>
+      <FileName>InfoBok.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TableTapManager.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TableTapManager.Model.TableTapEntities3">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEEBBUAgEQMAFAAAEIABQRAAEABAByAAECAAAKAIAAA=</HashCode>
+      <FileName>Model\Model1.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Admin">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAEAAAAAAAAAAAAAACAAAQAAIAAAA=</HashCode>
+      <FileName>Model\Admin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Booking">
+    <Position X="18.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACABAAAAAQAAEIAAAAAAQCAAIAAgAAAAAAAEAAAACAA=</HashCode>
+      <FileName>Model\Booking.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Booking_status">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAACAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Booking_status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Dish">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAAAAAAABAAAAAAAAAAEAAAAAAQAAA=</HashCode>
+      <FileName>Model\Dish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Dish_Order">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAgAAACAAAAA=</HashCode>
+      <FileName>Model\Dish_Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.GetBookings_Result">
+    <Position X="21.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAIAAAAAAACAAIAAgAAAAAAAEAAAACAA=</HashCode>
+      <FileName>Model\GetBookings_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.GetOrders_Result">
+    <Position X="9.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAEAAAAAAEABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GetOrders_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.GetRestaurants_Result">
+    <Position X="12.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GetRestaurants_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.GetTables_Result">
+    <Position X="2.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAIAAJAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GetTables_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.GetUsers_Result">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAAAAAAAAAAAAQABAAAAAACIAAQAAIAAgA=</HashCode>
+      <FileName>Model\GetUsers_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.logs">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAACAAAABAAAAAAIAAAgAAAAA=</HashCode>
+      <FileName>Model\logs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Manager">
+    <Position X="12.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAEAAAAAAAAAAAAAACAAAQAAAIAAA=</HashCode>
+      <FileName>Model\Manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Order">
+    <Position X="14.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAEAAAAAIEABBAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Model\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Order_status">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Model\Order_status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Payment">
+    <Position X="11" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEBAAQAAAAAACAAAAAAAAAAAAAAAAAAAACAQAAAAAA=</HashCode>
+      <FileName>Model\Payment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.PaymentDetails">
+    <Position X="20" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAQAIAAAAAAAAAAAAAQABAAAAAAAAACAQAAAAAA=</HashCode>
+      <FileName>Model\PaymentDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Restaurant">
+    <Position X="21.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAABAAAAAAAAQAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Restaurant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.RestaurantTableList">
+    <Position X="13" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAABAAAAAAAAAIAAAAAAIAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\RestaurantTableList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.RestaurantView">
+    <Position X="20" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAABAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\RestaurantView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Role">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAQAAEAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.Table">
+    <Position X="7.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAEAAAAAAAAAAAAIAAJAAAABAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Table.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.TableView">
+    <Position X="14.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAAAAAAAAAIAAIAAAAAAIAACAAAAAAAAAAA=</HashCode>
+      <FileName>Model\TableView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.User">
+    <Position X="16.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAAAAAAAIAAAAQABABAAAACIAAQAIIAAgA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.User_View">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\User_View.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Model.UserView">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQABAAAAAAAIAAQAAAAAAA=</HashCode>
+      <FileName>Model\UserView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Properties.Resources">
+    <Position X="23.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TableTapManager.Properties.Settings">
+    <Position X="23.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

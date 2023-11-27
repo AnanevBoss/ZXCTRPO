@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4d94c96456af42f29b591892f60e6053" Name="Diagram1" ZoomLevel="67">
+        <EntityTypeShape EntityType="TableTapModel.Admin" Width="1.5" PointX="13" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Booking" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Booking_status" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Dish" Width="1.5" PointX="8" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Dish_Order" Width="1.5" PointX="10.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.logs" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Manager" Width="1.5" PointX="13" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Order" Width="1.5" PointX="8" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Order_status" Width="1.5" PointX="5.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Payment" Width="1.5" PointX="10.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Restaurant" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Role" Width="1.5" PointX="10.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.Table" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.User" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.User_View" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.PaymentDetails" Width="1.5" PointX="5.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.RestaurantTableList" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.RestaurantView" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.TableView" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TableTapModel.UserView" Width="1.5" PointX="12.75" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="TableTapModel.FK_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Booking_status_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Table_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_User_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.PK__Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Dish" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Role2" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK__OrdeR" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Order_status" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_User" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_Restaurant" ManuallyRouted="false" />
+        <AssociationConnector Association="TableTapModel.FK_User_View" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

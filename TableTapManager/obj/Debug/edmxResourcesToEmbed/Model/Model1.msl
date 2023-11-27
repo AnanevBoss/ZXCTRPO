@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TableTapModelContainer" CdmEntityContainer="TableTapEntities3">
+    <EntitySetMapping Name="Admin">
+      <EntityTypeMapping TypeName="TableTapModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="ID_Admin" ColumnName="ID_Admin" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role_Id" ColumnName="Role_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Booking">
+      <EntityTypeMapping TypeName="TableTapModel.Booking">
+        <MappingFragment StoreEntitySet="Booking">
+          <ScalarProperty Name="Id_Booking" ColumnName="Id_Booking" />
+          <ScalarProperty Name="Booking_date" ColumnName="Booking_date" />
+          <ScalarProperty Name="Booking_time" ColumnName="Booking_time" />
+          <ScalarProperty Name="Number_of_guests" ColumnName="Number_of_guests" />
+          <ScalarProperty Name="Table_id" ColumnName="Table_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Booking_status_id" ColumnName="Booking_status_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Booking_status">
+      <EntityTypeMapping TypeName="TableTapModel.Booking_status">
+        <MappingFragment StoreEntitySet="Booking_status">
+          <ScalarProperty Name="Id_Booking_status" ColumnName="Id_Booking_status" />
+          <ScalarProperty Name="Booking_status1" ColumnName="Booking_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dish">
+      <EntityTypeMapping TypeName="TableTapModel.Dish">
+        <MappingFragment StoreEntitySet="Dish">
+          <ScalarProperty Name="Id_Dish" ColumnName="Id_Dish" />
+          <ScalarProperty Name="Name_of_the_dish" ColumnName="Name_of_the_dish" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dish_Order">
+      <EntityTypeMapping TypeName="TableTapModel.Dish_Order">
+        <MappingFragment StoreEntitySet="Dish-Order">
+          <ScalarProperty Name="Id_Dish_Order" ColumnName="Id_Dish-Order" />
+          <ScalarProperty Name="Dish_id" ColumnName="Dish_id" />
+          <ScalarProperty Name="Order_Id" ColumnName="Order_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logs">
+      <EntityTypeMapping TypeName="TableTapModel.logs">
+        <MappingFragment StoreEntitySet="logs">
+          <ScalarProperty Name="ID_logs" ColumnName="ID_logs" />
+          <ScalarProperty Name="Date_of_recording" ColumnName="Date_of_recording" />
+          <ScalarProperty Name="Time_of_recording" ColumnName="Time_of_recording" />
+          <ScalarProperty Name="Booking_ID" ColumnName="Booking_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manager">
+      <EntityTypeMapping TypeName="TableTapModel.Manager">
+        <MappingFragment StoreEntitySet="Manager">
+          <ScalarProperty Name="ID_Manager" ColumnName="ID_Manager" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role2_Id" ColumnName="Role2_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="TableTapModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Order_Time" ColumnName="Order_Time" />
+          <ScalarProperty Name="Order_status_Id" ColumnName="Order_status_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_status">
+      <EntityTypeMapping TypeName="TableTapModel.Order_status">
+        <MappingFragment StoreEntitySet="Order status">
+          <ScalarProperty Name="Id_Order_status" ColumnName="Id_Order status" />
+          <ScalarProperty Name="Order_status1" ColumnName="Order_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment">
+      <EntityTypeMapping TypeName="TableTapModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="Id_Payment" ColumnName="Id_Payment" />
+          <ScalarProperty Name="Payment_amount" ColumnName="Payment_amount" />
+          <ScalarProperty Name="Date_and_time_of_payment" ColumnName="Date_and_time_of_payment" />
+          <ScalarProperty Name="Payment_status" ColumnName="Payment_status" />
+          <ScalarProperty Name="Order_id" ColumnName="Order_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurant">
+      <EntityTypeMapping TypeName="TableTapModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurant">
+          <ScalarProperty Name="Id_Restaurant" ColumnName="Id_Restaurant" />
+          <ScalarProperty Name="Work_schedule" ColumnName="Work_schedule" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="TableTapModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+          <ScalarProperty Name="Name_Role" ColumnName="Name_Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Table">
+      <EntityTypeMapping TypeName="TableTapModel.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Id_Table" ColumnName="Id_Table" />
+          <ScalarProperty Name="Table_number" ColumnName="Table_number" />
+          <ScalarProperty Name="Number_of_seats" ColumnName="Number_of_seats" />
+          <ScalarProperty Name="Restaurant_Id" ColumnName="Restaurant_Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="TableTapModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="User_View_id" ColumnName="User_View_id" />
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_View">
+      <EntityTypeMapping TypeName="TableTapModel.User_View">
+        <MappingFragment StoreEntitySet="User View">
+          <ScalarProperty Name="Id_User_View" ColumnName="Id_User View" />
+          <ScalarProperty Name="User_View1" ColumnName="User_View" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentDetails">
+      <EntityTypeMapping TypeName="TableTapModel.PaymentDetails">
+        <MappingFragment StoreEntitySet="PaymentDetails">
+          <ScalarProperty Name="Id_Payment" ColumnName="Id_Payment" />
+          <ScalarProperty Name="Payment_amount" ColumnName="Payment_amount" />
+          <ScalarProperty Name="Date_and_time_of_payment" ColumnName="Date_and_time_of_payment" />
+          <ScalarProperty Name="Payment_status" ColumnName="Payment_status" />
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantTableList">
+      <EntityTypeMapping TypeName="TableTapModel.RestaurantTableList">
+        <MappingFragment StoreEntitySet="RestaurantTableList">
+          <ScalarProperty Name="Id_Restaurant" ColumnName="Id_Restaurant" />
+          <ScalarProperty Name="Work_schedule" ColumnName="Work_schedule" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Id_Table" ColumnName="Id_Table" />
+          <ScalarProperty Name="Table_number" ColumnName="Table_number" />
+          <ScalarProperty Name="Number_of_seats" ColumnName="Number_of_seats" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RestaurantView">
+      <EntityTypeMapping TypeName="TableTapModel.RestaurantView">
+        <MappingFragment StoreEntitySet="RestaurantView">
+          <ScalarProperty Name="Id_Restaurant" ColumnName="Id_Restaurant" />
+          <ScalarProperty Name="Work_schedule" ColumnName="Work_schedule" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableView">
+      <EntityTypeMapping TypeName="TableTapModel.TableView">
+        <MappingFragment StoreEntitySet="TableView">
+          <ScalarProperty Name="Id_Table" ColumnName="Id_Table" />
+          <ScalarProperty Name="Table_number" ColumnName="Table_number" />
+          <ScalarProperty Name="Number_of_seats" ColumnName="Number_of_seats" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Work_schedule" ColumnName="Work_schedule" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserView">
+      <EntityTypeMapping TypeName="TableTapModel.UserView">
+        <MappingFragment StoreEntitySet="UserView">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="Хранилище TableTapModel.GetBookings" FunctionImportName="GetBookings">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TableTapModel.GetBookings_Result">
+          <ScalarProperty Name="Id_Booking" ColumnName="Id_Booking" />
+          <ScalarProperty Name="Booking_date" ColumnName="Booking_date" />
+          <ScalarProperty Name="Booking_time" ColumnName="Booking_time" />
+          <ScalarProperty Name="Number_of_guests" ColumnName="Number_of_guests" />
+          <ScalarProperty Name="Table_id" ColumnName="Table_id" />
+          <ScalarProperty Name="User_id" ColumnName="User_id" />
+          <ScalarProperty Name="Booking_status_id" ColumnName="Booking_status_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Хранилище TableTapModel.GetOrders" FunctionImportName="GetOrders">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TableTapModel.GetOrders_Result">
+          <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Order_Time" ColumnName="Order_Time" />
+          <ScalarProperty Name="Order_status_Id" ColumnName="Order_status_Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Хранилище TableTapModel.GetRestaurants" FunctionImportName="GetRestaurants">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TableTapModel.GetRestaurants_Result">
+          <ScalarProperty Name="Id_Restaurant" ColumnName="Id_Restaurant" />
+          <ScalarProperty Name="Work_schedule" ColumnName="Work_schedule" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Хранилище TableTapModel.GetTables" FunctionImportName="GetTables">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TableTapModel.GetTables_Result">
+          <ScalarProperty Name="Id_Table" ColumnName="Id_Table" />
+          <ScalarProperty Name="Table_number" ColumnName="Table_number" />
+          <ScalarProperty Name="Number_of_seats" ColumnName="Number_of_seats" />
+          <ScalarProperty Name="Restaurant_Id" ColumnName="Restaurant_Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="Хранилище TableTapModel.GetUsers" FunctionImportName="GetUsers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TableTapModel.GetUsers_Result">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="User_View_id" ColumnName="User_View_id" />
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Phone_number" ColumnName="Phone_number" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddOrder" FunctionName="Хранилище TableTapModel.AddOrder" />
+    <FunctionImportMapping FunctionImportName="AddPayment" FunctionName="Хранилище TableTapModel.AddPayment" />
+    <FunctionImportMapping FunctionImportName="AddRestaurant" FunctionName="Хранилище TableTapModel.AddRestaurant" />
+    <FunctionImportMapping FunctionImportName="AddRestaurants" FunctionName="Хранилище TableTapModel.AddRestaurants" />
+    <FunctionImportMapping FunctionImportName="AddTable" FunctionName="Хранилище TableTapModel.AddTable" />
+  </EntityContainerMapping>
+</Mapping>

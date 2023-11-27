@@ -1,0 +1,39 @@
+﻿<Window x:Class="TableTapManager.CSV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TableTapManager"
+        mc:Ignorable="d"
+        Title="CSV" Height="450" Width="800">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="2" Grid.ColumnSpan="3" x:Name="DgridBooking"  AutoGenerateColumns="False" IsReadOnly="True" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата бронирования" Binding="{Binding Booking_date}" Width="*"/>
+                <DataGridTextColumn Header="Время бронирования" Binding="{Binding Booking_time}" Width="*"/>
+                <DataGridTextColumn Header="Количество гостей" Binding="{Binding Number_of_guests}" Width="*"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Booking_status.Booking_status1}" Width="*"/>
+                <DataGridTextColumn Header="Номер стола" Binding="{Binding Table.Table_number}" Width="*"/>
+                <DataGridTextColumn Header="Логин" Binding="{Binding User.Login}" Width="*"/>
+                <DataGridTemplateColumn Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Button Grid.Column="1" Grid.Row="3" Content="Экспорт" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="120" Click="BtnExportToCSV" Margin="107,42,0,0" />
+        <Button Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="BtnBack"/>
+    </Grid>
+</Window>

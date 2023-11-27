@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TableTapModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="GetBookings_Result">
+    <Property Name="Id_Booking" Type="Int32" Nullable="false" />
+    <Property Name="Booking_date" Type="DateTime" Nullable="false" />
+    <Property Name="Booking_time" Type="Time" Nullable="false" />
+    <Property Name="Number_of_guests" Type="Int32" />
+    <Property Name="Table_id" Type="Int32" />
+    <Property Name="User_id" Type="Int32" />
+    <Property Name="Booking_status_id" Type="Int32" />
+  </ComplexType>
+  <ComplexType Name="GetOrders_Result">
+    <Property Name="Id_Order" Type="Int32" Nullable="false" />
+    <Property Name="Order_Date" Type="DateTime" Nullable="false" />
+    <Property Name="Order_Time" Type="Time" Nullable="false" />
+    <Property Name="Order_status_Id" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetRestaurants_Result">
+    <Property Name="Id_Restaurant" Type="Int32" Nullable="false" />
+    <Property Name="Work_schedule" Type="DateTime" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetTables_Result">
+    <Property Name="Id_Table" Type="Int32" Nullable="false" />
+    <Property Name="Table_number" Type="Int32" Nullable="false" />
+    <Property Name="Number_of_seats" Type="Int32" Nullable="false" />
+    <Property Name="Restaurant_Id" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="GetUsers_Result">
+    <Property Name="Id_User" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_View_id" Type="Int32" />
+    <Property Name="Role_id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </ComplexType>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID_Admin" />
+    </Key>
+    <Property Name="ID_Admin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_Role" FromRole="Admin" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Id_Booking" />
+    </Key>
+    <Property Name="Id_Booking" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Booking_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Booking_time" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Number_of_guests" Type="Int32" />
+    <Property Name="Table_id" Type="Int32" />
+    <Property Name="User_id" Type="Int32" />
+    <Property Name="Booking_status_id" Type="Int32" />
+    <NavigationProperty Name="Booking_status" Relationship="Self.FK_Booking_status_Booking" FromRole="Booking" ToRole="Booking_status" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_Table_Booking" FromRole="Booking" ToRole="Table" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_Booking" FromRole="Booking" ToRole="User" />
+    <NavigationProperty Name="logs" Relationship="Self.PK__Booking" FromRole="Booking" ToRole="logs" />
+  </EntityType>
+  <EntityType Name="Booking_status">
+    <Key>
+      <PropertyRef Name="Id_Booking_status" />
+    </Key>
+    <Property Name="Id_Booking_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Booking_status1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Booking" Relationship="Self.FK_Booking_status_Booking" FromRole="Booking_status" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="Dish">
+    <Key>
+      <PropertyRef Name="Id_Dish" />
+    </Key>
+    <Property Name="Id_Dish" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_of_the_dish" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cost" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dish_Order" Relationship="Self.FK_Dish" FromRole="Dish" ToRole="Dish_Order" />
+  </EntityType>
+  <EntityType Name="Dish_Order">
+    <Key>
+      <PropertyRef Name="Id_Dish_Order" />
+    </Key>
+    <Property Name="Id_Dish_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dish_id" Type="Int32" Nullable="false" />
+    <Property Name="Order_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK_Dish" FromRole="Dish_Order" ToRole="Dish" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order" FromRole="Dish_Order" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="logs">
+    <Key>
+      <PropertyRef Name="ID_logs" />
+    </Key>
+    <Property Name="ID_logs" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date_of_recording" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Time_of_recording" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Booking_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Booking" Relationship="Self.PK__Booking" FromRole="logs" ToRole="Booking" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ID_Manager" />
+    </Key>
+    <Property Name="ID_Manager" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role2_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_Role2" FromRole="Manager" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id_Order" />
+    </Key>
+    <Property Name="Id_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Order_Time" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="Order_status_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Dish_Order" Relationship="Self.FK_Order" FromRole="Order" ToRole="Dish_Order" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK__OrdeR" FromRole="Order" ToRole="Payment" />
+    <NavigationProperty Name="Order_status" Relationship="Self.FK_Order_status" FromRole="Order" ToRole="Order_status" />
+  </EntityType>
+  <EntityType Name="Order_status">
+    <Key>
+      <PropertyRef Name="Id_Order_status" />
+    </Key>
+    <Property Name="Id_Order_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Order_status1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_Order_status" FromRole="Order_status" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id_Payment" />
+    </Key>
+    <Property Name="Id_Payment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Payment_amount" Type="Int32" Nullable="false" />
+    <Property Name="Date_and_time_of_payment" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Payment_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Order_id" Type="Int32" Nullable="false" />
+    <Property Name="User_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__OrdeR" FromRole="Payment" ToRole="Order" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User" FromRole="Payment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Restaurant">
+    <Key>
+      <PropertyRef Name="Id_Restaurant" />
+    </Key>
+    <Property Name="Id_Restaurant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Work_schedule" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Table" Relationship="Self.FK_Restaurant" FromRole="Restaurant" ToRole="Table" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id_Role" />
+    </Key>
+    <Property Name="Id_Role" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Admin" Relationship="Self.FK_Role" FromRole="Role" ToRole="Admin" />
+    <NavigationProperty Name="Manager" Relationship="Self.FK_Role2" FromRole="Role" ToRole="Manager" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id_Table" />
+    </Key>
+    <Property Name="Id_Table" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Table_number" Type="Int32" Nullable="false" />
+    <Property Name="Number_of_seats" Type="Int32" Nullable="false" />
+    <Property Name="Restaurant_Id" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Booking" Relationship="Self.FK_Table_Booking" FromRole="Table" ToRole="Booking" />
+    <NavigationProperty Name="Restaurant" Relationship="Self.FK_Restaurant" FromRole="Table" ToRole="Restaurant" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id_User" />
+    </Key>
+    <Property Name="Id_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="User_View_id" Type="Int32" />
+    <Property Name="Role_id" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Booking" Relationship="Self.FK_User_Booking" FromRole="User" ToRole="Booking" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_User" FromRole="User" ToRole="Payment" />
+    <NavigationProperty Name="User_View" Relationship="Self.FK_User_View" FromRole="User" ToRole="User_View" />
+  </EntityType>
+  <EntityType Name="User_View">
+    <Key>
+      <PropertyRef Name="Id_User_View" />
+    </Key>
+    <Property Name="Id_User_View" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_View1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK_User_View" FromRole="User_View" ToRole="User" />
+  </EntityType>
+  <EntityType Name="PaymentDetails">
+    <Key>
+      <PropertyRef Name="Id_Payment" />
+      <PropertyRef Name="Payment_amount" />
+      <PropertyRef Name="Date_and_time_of_payment" />
+      <PropertyRef Name="Payment_status" />
+      <PropertyRef Name="Id_Order" />
+    </Key>
+    <Property Name="Id_Payment" Type="Int32" Nullable="false" />
+    <Property Name="Payment_amount" Type="Int32" Nullable="false" />
+    <Property Name="Date_and_time_of_payment" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Payment_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Order" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RestaurantTableList">
+    <Key>
+      <PropertyRef Name="Id_Restaurant" />
+      <PropertyRef Name="Work_schedule" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="Id_Table" />
+      <PropertyRef Name="Table_number" />
+      <PropertyRef Name="Number_of_seats" />
+    </Key>
+    <Property Name="Id_Restaurant" Type="Int32" Nullable="false" />
+    <Property Name="Work_schedule" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Id_Table" Type="Int32" Nullable="false" />
+    <Property Name="Table_number" Type="Int32" Nullable="false" />
+    <Property Name="Number_of_seats" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RestaurantView">
+    <Key>
+      <PropertyRef Name="Id_Restaurant" />
+      <PropertyRef Name="Work_schedule" />
+      <PropertyRef Name="Address" />
+    </Key>
+    <Property Name="Id_Restaurant" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Work_schedule" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableView">
+    <Key>
+      <PropertyRef Name="Id_Table" />
+      <PropertyRef Name="Table_number" />
+      <PropertyRef Name="Number_of_seats" />
+      <PropertyRef Name="Location" />
+      <PropertyRef Name="Work_schedule" />
+      <PropertyRef Name="Address" />
+    </Key>
+    <Property Name="Id_Table" Type="Int32" Nullable="false" />
+    <Property Name="Table_number" Type="Int32" Nullable="false" />
+    <Property Name="Number_of_seats" Type="Int32" Nullable="false" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Work_schedule" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserView">
+    <Key>
+      <PropertyRef Name="Id_User" />
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Id_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id_Role" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Booking_status_Booking">
+    <End Role="Booking_status" Type="Self.Booking_status" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking_status">
+        <PropertyRef Name="Id_Booking_status" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Booking_status_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Booking">
+    <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="Id_Table" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Table_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Booking">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PK__Booking">
+    <End Role="Booking" Type="Self.Booking" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="logs" Type="Self.logs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking">
+        <PropertyRef Name="Id_Booking" />
+      </Principal>
+      <Dependent Role="logs">
+        <PropertyRef Name="Booking_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="Dish_Order" Type="Self.Dish_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="Id_Dish" />
+      </Principal>
+      <Dependent Role="Dish_Order">
+        <PropertyRef Name="Dish_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Dish_Order" Type="Self.Dish_Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id_Order" />
+      </Principal>
+      <Dependent Role="Dish_Order">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Role2">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Manager" Type="Self.Manager" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id_Role" />
+      </Principal>
+      <Dependent Role="Manager">
+        <PropertyRef Name="Role2_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__OrdeR">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id_Order" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="Order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_status">
+    <End Role="Order_status" Type="Self.Order_status" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order_status">
+        <PropertyRef Name="Id_Order_status" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="Order_status_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_User" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Restaurant">
+    <End Role="Restaurant" Type="Self.Restaurant" Multiplicity="1" />
+    <End Role="Table" Type="Self.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurant">
+        <PropertyRef Name="Id_Restaurant" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="Restaurant_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_View">
+    <End Role="User_View" Type="Self.User_View" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_View">
+        <PropertyRef Name="Id_User_View" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="User_View_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TableTapEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Admin" EntityType="Self.Admin" />
+    <EntitySet Name="Booking" EntityType="Self.Booking" />
+    <EntitySet Name="Booking_status" EntityType="Self.Booking_status" />
+    <EntitySet Name="Dish" EntityType="Self.Dish" />
+    <EntitySet Name="Dish_Order" EntityType="Self.Dish_Order" />
+    <EntitySet Name="logs" EntityType="Self.logs" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="Order_status" EntityType="Self.Order_status" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" />
+    <EntitySet Name="Restaurant" EntityType="Self.Restaurant" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="Table" EntityType="Self.Table" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="User_View" EntityType="Self.User_View" />
+    <EntitySet Name="PaymentDetails" EntityType="Self.PaymentDetails" />
+    <EntitySet Name="RestaurantTableList" EntityType="Self.RestaurantTableList" />
+    <EntitySet Name="RestaurantView" EntityType="Self.RestaurantView" />
+    <EntitySet Name="TableView" EntityType="Self.TableView" />
+    <EntitySet Name="UserView" EntityType="Self.UserView" />
+    <AssociationSet Name="FK_Role" Association="Self.FK_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Booking_status_Booking" Association="Self.FK_Booking_status_Booking">
+      <End Role="Booking_status" EntitySet="Booking_status" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Booking" Association="Self.FK_Table_Booking">
+      <End Role="Table" EntitySet="Table" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Booking" Association="Self.FK_User_Booking">
+      <End Role="User" EntitySet="User" />
+      <End Role="Booking" EntitySet="Booking" />
+    </AssociationSet>
+    <AssociationSet Name="PK__Booking" Association="Self.PK__Booking">
+      <End Role="Booking" EntitySet="Booking" />
+      <End Role="logs" EntitySet="logs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dish" Association="Self.FK_Dish">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="Dish_Order" EntitySet="Dish_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order" Association="Self.FK_Order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Dish_Order" EntitySet="Dish_Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Role2" Association="Self.FK_Role2">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Manager" EntitySet="Manager" />
+    </AssociationSet>
+    <AssociationSet Name="FK__OrdeR" Association="Self.FK__OrdeR">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_status" Association="Self.FK_Order_status">
+      <End Role="Order_status" EntitySet="Order_status" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User" Association="Self.FK_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Restaurant" Association="Self.FK_Restaurant">
+      <End Role="Restaurant" EntitySet="Restaurant" />
+      <End Role="Table" EntitySet="Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_View" Association="Self.FK_User_View">
+      <End Role="User_View" EntitySet="User_View" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <FunctionImport Name="GetBookings" IsComposable="true" ReturnType="Collection(TableTapModel.GetBookings_Result)" />
+    <FunctionImport Name="GetOrders" IsComposable="true" ReturnType="Collection(TableTapModel.GetOrders_Result)" />
+    <FunctionImport Name="GetRestaurants" IsComposable="true" ReturnType="Collection(TableTapModel.GetRestaurants_Result)" />
+    <FunctionImport Name="GetTables" IsComposable="true" ReturnType="Collection(TableTapModel.GetTables_Result)" />
+    <FunctionImport Name="GetUsers" IsComposable="true" ReturnType="Collection(TableTapModel.GetUsers_Result)" />
+    <FunctionImport Name="AddOrder">
+      <Parameter Name="Order_Date" Mode="In" Type="DateTime" />
+      <Parameter Name="Order_Time" Mode="In" Type="Time" />
+      <Parameter Name="Order_status_Id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddPayment">
+      <Parameter Name="Payment_amount" Mode="In" Type="Int32" />
+      <Parameter Name="Date_and_time_of_payment" Mode="In" Type="DateTime" />
+      <Parameter Name="Payment_status" Mode="In" Type="String" />
+      <Parameter Name="Order_id" Mode="In" Type="Int32" />
+      <Parameter Name="User_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="AddRestaurant">
+      <Parameter Name="Work_schedule" Mode="In" Type="DateTime" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddRestaurants">
+      <Parameter Name="WorkSchedule" Mode="In" Type="DateTime" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AddTable">
+      <Parameter Name="Table_number" Mode="In" Type="Int32" />
+      <Parameter Name="Number_of_seats" Mode="In" Type="Int32" />
+      <Parameter Name="Restaurant_Id" Mode="In" Type="Int32" />
+      <Parameter Name="Location" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>
